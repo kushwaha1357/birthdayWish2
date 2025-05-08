@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #a2c8ff, #c9a4e4, #f5a3b8, #b8f2c5);
+  background-size: 400% 400%;
+  animation: gradientFlow 20s ease infinite;
+  font-family: 'Great Vibes', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.audio {
+  display: none;
+}
+
+.book {
+  width: 320px;
+  height: 450px;
+  position: relative;
+  perspective: 2000px;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  background: rgb(247, 198, 249);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 30px;
+  box-sizing: border-box;
+  text-align: center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: transform 1s, opacity 1s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.page.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: rotateY(0deg);
+}
+
+#page1 {
+  background: linear-gradient(to top left, #ffdde1, #ee9ca7);
+}
+#page2 {
+  background: linear-gradient(to top right, #c1f0f6, #d1f7ff);
+}
+#page3 {
+  background: linear-gradient(to top right, #fef6e4, #ffe8d6);
+}
+
+h1, h2 {
+  margin-top: 0;
+  color: #ff1493;
+  text-shadow: 1px 1px 5px #fff;
+}
+
+p {
+  font-size: 1.3em;
+  color: #333;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.message-note {
+  background: linear-gradient(to bottom right, #fff0f5, #ffe0ec);
+  border: 2px dashed #ff69b4;
+  padding: 20px;
+  border-radius: 20px;
+  font-family: 'Pacifico', cursive;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+  margin-top: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.message-note p {
+  font-size: 1.2em;
+  color: #b22222;
+  line-height: 1.6;
+  text-align: center;
+} */
+
+.floating-hearts {
+  font-size: 1.5em;
+  margin-top: 10px;
+  animation: floatHearts 4s ease-in-out infinite;
+}
+
+@keyframes floatHearts {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-10px); opacity: 0.7; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
